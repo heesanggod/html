@@ -140,7 +140,7 @@ console.log(false || '홍길동');   // 우항 그대로 읽음
 console.log(true && '홍길동');
 console.log(false && '홍길동');
 
-console.log('홍길동' && true);  // 좌항에 논리값이 아닌경우 true로 읽음   좌항과 우항에 논리값이 아닌경우 우항 그대로 읽음
+console.log('홍길동' && true);  
 
 
 /*
@@ -163,3 +163,4 @@ let type = typeof x;
 console.log(type);
 console.log(typeof type);
 
+console.log('홍길동' || true);
