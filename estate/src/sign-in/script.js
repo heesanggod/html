@@ -7,8 +7,9 @@ function onSignInButtonClickHandler (event) {
 
     if (id === ID && password === PASSWORD) {
             alert ('로그인 성공!');
+            signInMessageElement.textContent = ' ';
     } else {
-        const signInMessageElement = document.getElementById('sign-in-message');
+        // const signInMessageElement = document.getElementById('sign-in-message');
         signInMessageElement.textContent = '로그인 정보가 일치하지 않습니다.';
     }
 }
