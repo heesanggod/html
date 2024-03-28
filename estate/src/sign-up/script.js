@@ -5,6 +5,8 @@ const AUTH_NUMBER = '1010';
 
 let id = '', password = '', passwordCheck = '', email = '', authNumber = '';
 let isDuplicate = true, isPasswordPattern = false, isEqualPassword = false, isEmail = false, isDuplicateEmail = true, isEqualAuthNumber = false;
+// Duplicate 중복이라서 true가 오면 초기화를 한다
+
 
 const idInputElement = document.getElementById ('id');
 const passwordInputElement = document.getElementById('password');
@@ -34,18 +36,18 @@ function onIdInputHandler (event) {
 }
 
 function onPasswordInputHandler (event) {
-    password = event.target.value;
+    password = event.target.value;    // 비밀번호 변수에 이벤트가 발생한 실제 요소의 value 값을 할당한다.
     const passwordReg = /^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]{8,13}$/;   // 영문 숫자를 혼용하여 8~13자
-    isPasswordPattern = passwordReg.test(password);
+    isPasswordPattern = passwordReg.test(password);     //  비밀번호 변수에 들어있는 값이 비밀번호 패턴과 일치하는지 확인한다.
 
-    if (!isPasswordPattern) {
-        passwordMessageElement.className = 'input-message error';
-        passwordMessageElement.textContent = '영문, 숫자를 혼용하여 8 ~ 13자 입력해주세요';
-        return;
+    if (!isPasswordPattern) {  // 비밀번호 패턴이 일치하지 않을 때
+        passwordMessageElement.className = 'input-message error';      // passwordMessage 요소의 클래스명을 'input-message error' 로 바꿈
+        passwordMessageElement.textContent = '영문, 숫자를 혼용하여 8 ~ 13자 입력해주세요';    // passwordMessage 요소의 텍스트를 '영문, 숫자를 혼용하여 8 ~ 13자 입력해주세요' 로 바꿈
+        return;   // 변경 작업이 이뤄진 후 함수를 종료
     }
-}
-passwordMessageElement.className = 'input-message';
-passwordMessageElement.textContent = '';
+} // 비밀번호 패턴이 일치할 경우에만 아래 코드 실행
+passwordMessageElement.className = 'input-message';  //  passwordMessage 요소의 클래스명을 'input-message' 로 바꿈
+passwordMessageElement.textContent = '';   // passwordMessage 요소의 텍스트를 빈 문자열로 바꿈
 
 function onPasswordCheckInputHandler (event) {
     passwordCheck = event.target.value;
