@@ -62,12 +62,10 @@ console.log('========================================');
 //     death : '1408.06.27.'
 // };
 
-
 // 객체 디스트럭처링에서는 변수의 순서는 상관없지만, 이름은 반드시 객체의 키의 이름과 같아야함
 const { name, tombName } = king;
 console.log(name);
 console.log(tombName);
-
 
 console.log('========================================');
 
@@ -79,7 +77,5 @@ const { birth, death, ...reftking } = king;
 console.log(birth);
 console.log(death);
 console.log(reftking);
-
-
 
 console.log('========================================');
